@@ -3,29 +3,31 @@ document.body.children[0].innerText = 'Show Company Form';
 let companies = [{
     name : 'Kyocera',
     price : 54.36,
-    isUsComapny : true,
-    ticker : 'JPM',
+    isUsComapny : false,
+//  href="https://www.marketwatch.com/investing/stock/kyocy?mod=search_symbol"
+    ticker : 'KYOCY', 
     amount : 0
 },{
     name : 'J&J',
     price : 163.36,
-    isUsComapny : false,
-    ticker : 'DB',
+    isUsComapny : true,
+    ticker : 'JNJ',
     amount : 0
 },{
     name : 'Hamilton Beach',
     price : 11.50,
     isUsComapny : true,
-    ticker : 'FNF',
+    ticker : 'HBB',
     amount : 0
 },{
     name : 'Commercial Metals',
     price : 35.48,
     isUsComapny : true,
-    ticker : 'FNF',
+    ticker : 'CMC',
     amount : 0
 }]
 
+ticker += 
 function generateTable() {
     // Write code to create the table the list of companies
     let tableBodyElement = document.getElementById('table-body');
@@ -36,10 +38,12 @@ function generateTable() {
         
         let trElement = document.createElement('tr');
 
-        createAndAppendTd(trElement, company.ticker);
+        createAndAppendTd(trElement, company.name);
         createAndAppendTd(trElement, company.price);
         createAndAppendTd(trElement, company.amount);
         createAndAppendTd(trElement, company.isUsComapny ? 'Yes' : 'No');
+        createAndAppendTd(trElement, company.ticker);
+
 
         let btnTd = document.createElement('td');
         let btn = document.createElement('button');
