@@ -27,12 +27,13 @@ let companies = [{
     amount : 0
 }]
 
-ticker += 
+
 function generateTable() {
     // Write code to create the table the list of companies
     let tableBodyElement = document.getElementById('table-body');
     tableBodyElement.innerHTML = null;
 
+    //this is the for loop line 37-58
     for(let i = 0; i < companies.length; i++){
         var company = companies[i];
         
@@ -44,24 +45,37 @@ function generateTable() {
         createAndAppendTd(trElement, company.isUsComapny ? 'Yes' : 'No');
         createAndAppendTd(trElement, company.ticker);
 
-
-        let btnTd = document.createElement('td');
-        let btn = document.createElement('button');
-        btnTd.append(btn);
+        //this is the buy button
+        let btnTdb = document.createElement('td');
+        let btnb = document.createElement('button');
+        btnTdb.append(btnb);
         
         
-        btn.innerText = company.amount ? 'Buy More' : 'Buy';
+        btnb.innerText = company.amount ? 'Buy More' : 'Buy';
 
-        btn.addEventListener('click', function(){
+        btnb.addEventListener('click', function(){
            buyStock(i);
+
+            //this is the buy button
+        let btnTdr = document.createElement('td');
+        let btnr = document.createElement('button');
+        btnTdr.append(btnr);
+        
+        
+        btnr.innerText = 'Remove';
+
+        btnr.addEventListener('click', function(){
+           this.remove(trElement);
         });
 
-        trElement.append(btnTd);
+        trElement.append(btnTdb);
+        trElement.append(btnTdr);
+
 
         tableBodyElement.append(trElement);
     }
     
-}
+};
 
 function createAndAppendTd(trElement, innerText){
     let tdElement = document.createElement('td');
