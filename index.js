@@ -44,7 +44,7 @@ function generateTable() {
         createAndAppendTd(trElement, company.amount);
         createAndAppendTd(trElement, company.isUsComapny ? 'Yes' : 'No');
         createAndAppendTd(trElement, company.ticker);
-
+    
         //this is the buy button
         let btnTdb = document.createElement('td');
         let btnb = document.createElement('button');
@@ -102,7 +102,7 @@ function buyStock(index) {
     }
 }
 
-function showAddCompanyForm(){
+/*function showAddCompanyForm(){
     document.getElementById('addCompanyForm').style.display = 'block';
 }
 
@@ -117,5 +117,5 @@ function submitForm(){
     company.ticker = fd.get('ticker');
     companies.push(company);
     generateTable();
-    formElement.reset();
+    formElement.reset();*/
 }
