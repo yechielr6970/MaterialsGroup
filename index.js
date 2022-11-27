@@ -1,4 +1,4 @@
-document.body.children[0].innerText = 'Show Company Form';
+//document.body.children[0].innerText = 'Show Company Form';
 
 let companies = [{
     name : 'Kyocera',
@@ -36,14 +36,15 @@ function generateTable() {
     //this is the for loop line 37-58
     for(let i = 0; i < companies.length; i++){
         var company = companies[i];
+        //var scriptid= $('<div/>', { id: 'row', class: 'crow'})
         
         let trElement = document.createElement('tr');
 
-        createAndAppendTd(trElement, company.name);
-        createAndAppendTd(trElement, company.price);
-        createAndAppendTd(trElement, company.amount);
-        createAndAppendTd(trElement, company.isUsComapny ? 'Yes' : 'No');
-        createAndAppendTd(trElement, company.ticker);
+         createAndAppendTd(trElement, company.name);
+         createAndAppendTd(trElement, company.price);
+         createAndAppendTd(trElement, company.amount);
+         createAndAppendTd(trElement, company.isUsComapny ? 'Yes' : 'No');
+         createAndAppendTd(trElement, company.ticker);
     
         //this is the buy button
         let btnTdb = document.createElement('td');
@@ -55,8 +56,8 @@ function generateTable() {
 
         btnb.addEventListener('click', function(){
            buyStock(i);
-
-            //this is the buy button
+        });
+            //this is the remove button
         let btnTdr = document.createElement('td');
         let btnr = document.createElement('button');
         btnTdr.append(btnr);
@@ -64,9 +65,10 @@ function generateTable() {
         
         btnr.innerText = 'Remove';
 
-        btnr.addEventListener('click', function(){
-           this.remove(trElement);
-        });
+              
+              btnr.addEventListener('click',function remove(){
+               // scriptid = deleteRow(0);
+            });
 
         trElement.append(btnTdb);
         trElement.append(btnTdr);
@@ -100,8 +102,19 @@ function buyStock(index) {
 
         generateTable();
     }
-}
+}; 
 
+var getdate = new Date ();
+console.log (getdate);
+document.getElementById("date") .textContent = getdate;
+
+function refresh() {
+  const timeDisplay = document.getElementById("date");
+  const dateString = new Date().toLocaleString();
+  const formattedString = dateString.replace(", ", " - ");
+  timeDisplay.textContent = formattedString;
+}
+  setInterval(refresh, 1000);
 /*function showAddCompanyForm(){
     document.getElementById('addCompanyForm').style.display = 'block';
 }
@@ -117,5 +130,5 @@ function submitForm(){
     company.ticker = fd.get('ticker');
     companies.push(company);
     generateTable();
-    formElement.reset();*/
-}
+formElement.reset();}*/
+
