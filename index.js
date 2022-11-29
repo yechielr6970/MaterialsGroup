@@ -66,9 +66,13 @@ function generateTable() {
         btnr.innerText = 'Remove';
 
               
-              btnr.addEventListener('click',function remove(){
-               // scriptid = deleteRow(0);
-            });
+                function removeRow (index) {
+
+                companies.splice(index, 1);
+                generateTable();
+                }
+                btnr.addEventListener('click', removeRow(index) );
+
 
         trElement.append(btnTdb);
         trElement.append(btnTdr);
