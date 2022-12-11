@@ -61,10 +61,10 @@ function generateTable() {
         let btnTdr = document.createElement('td');
         let btnr = document.createElement('button');
         btnTdr.append(btnr);
-        
-        
+        var btnstl = document.createElement('div');
+        btnstl.id = 'setRed';        
         btnr.innerText = 'Remove';
-
+      btnTdr.append(btnstl);
               
         btnr.addEventListener('click',function removeRow (index) {
 
