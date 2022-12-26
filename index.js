@@ -29,14 +29,12 @@ let companies = [{
 
 
 function generateTable() {
-    // Write code to create the table the list of companies
     let tableBodyElement = document.getElementById('table-body');
     tableBodyElement.innerHTML = null;
 
-    //this is the for loop line 37-58
     for(let i = 0; i < companies.length; i++){
         var company = companies[i];
-        //var scriptid= $('<div/>', { id: 'row', class: 'crow'})
+        var scriptid= $('<div/>', { id: 'row', class: 'crow'})
         
         let trElement = document.createElement('tr');
 

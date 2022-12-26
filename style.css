@@ -1,5 +1,7 @@
 body {
-
+    background-image: url(./img/dollar.jpg);
+    background-size: 100px;
+    background-repeat: repeat;
     background-color : white;
     margin-inline: 5%;
 
@@ -45,6 +47,6 @@ span{
     font-weight: bold;
 }
 
-table, tr, td, button, #setRed{
+  .setRed{
 color : red;
 }
